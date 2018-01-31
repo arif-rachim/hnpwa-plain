@@ -1,0 +1,41 @@
+body {
+  background-color: #000000;
+  color: #FFFFFF;
+  font-size: 16px; }
+
+article {
+  font-size: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 1em; }
+  article .column-one {
+    padding-top: 0.3em;
+    width: 3em;
+    color: #666666;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    article .column-one .index {
+      width: 100%; }
+    article .column-one .upvote {
+      padding-right: 0.3em;
+      color: #AAAAAA; }
+  article .column-two {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: calc(100vw - 70px); }
+    article .column-two .comments {
+      width: 100%;
+      font-size: 0.9em;
+      padding-top: 0.2em;
+      padding-bottom: 0.2em;
+      color: #666666; }
+    article .column-two .title {
+      font-size: 1.3em; }
+      article .column-two .title .domain {
+        font-size: 0.6em;
+        color: #666666; }
