@@ -1,6 +1,6 @@
 # hnpwa-plain
 
-An early starting point for a Hacker News reader written in plain JavaScript (ES modules and template strings, no framework). It loads the first page of top stories from the HNPWA API and renders them as a list.
+hnpwa-plain is an early starting point for a Hacker News reader in the style of the HNPWA (Hacker News Progressive Web Apps) project, written in plain JavaScript with no framework and no JavaScript build step. It was started in January 2018 to see how far native ES modules and template strings could go for building a component-style UI: each component is a function that returns an HTML string, and `app.js` joins the header, story list and footer into `document.body`. A small helper, `on.js`, gives components a lifecycle hook by tagging elements with a generated CSS class that plays a 1 ms animation, then listening for `animationstart` to know when the element has been inserted into the DOM. The list component uses that hook to fetch the first page of top stories from the HNPWA API and render each story. Styles are written in Sass and compiled with Gulp. It is aimed at developers curious about framework-free UI patterns, and it is an unfinished prototype.
 
 > Initial commit from January 2018 and not developed further. There is no service worker or manifest yet, and the HNPWA API it calls (`hnpwa.com/api/v0`) no longer responds successfully, so the list stays empty today.
 
@@ -8,7 +8,7 @@ An early starting point for a Hacker News reader written in plain JavaScript (ES
 
 - Renders a header, a story list and a footer from template-string components
 - Fetches `news.json?page=1` from the HNPWA API and shows rank, title, domain, points, author, age and comment count for each story
-- `on.js` helper that runs a component's `create` callback when its element is inserted into the DOM
+- `on.js` helper that runs a component's `create` callback when its element is inserted into the DOM (detected through a CSS `animationstart` event)
 - Styles written in Sass and compiled to `css/app.css`
 
 ## Tech stack
